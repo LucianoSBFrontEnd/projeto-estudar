@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: var(--fonte-); /* Define a fonte padrão */
+}
+
+@font-face {
+    font-family: 'young';
+    src: url(YoungSerif-Regular.ttf);
+}
+
+:root {
+    --color-text: rgb(139, 28, 10); /* Define uma variável de cor para texto */
+    --fonte-: 'young'; /* Define uma variável para fonte */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container header {
+    padding: 20px;
+    display: flex; /* Adiciona display flex para alinhar itens verticalmente */
+    justify-content: space-between; /* Espaço entre o logo e o menu */
+    align-items: center; /* Centraliza verticalmente os itens do header */
+}
+
+#menu-mobile {
+    color: black;
+    outline: none;
+    border: 0;
+    width: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* Esconde o botão em telas maiores */
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav ul li {
+    color: rgb(139, 28, 10);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav ul li:last-child {
+    padding: 3px 10px;
+    color: var(--color); /* Usa a variável de cor definida */
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    padding: 2%;
+}
+
+.left {
+    width: 40%;
+    margin-right: 60px;
+}
+
+.left button {
+    outline: none;
+    border: 0;
+    padding: 3px 10px;
+    color: var(--color); /* Usa a variável de cor definida */
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.left button:hover {
+    transition: all ease 1s;
+    transform: scale(1.1);
+}
+
+.left h1 {
+    font-size: 2.3rem;
+}
+
+.right img {
+    width: 100%;
+}
+
+.left p {
+    font-weight: bold;
+    opacity: 0.6;
+    font-family: sans-serif;
+    margin: 30px 0;
+    line-height: 24px;
+}
+
+@media screen and (max-width: 868px) {
+    header nav ul {
+        justify-content: center;
+    }
+
+    main {
+        width: 100%;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    h1 {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .left {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .left button, .right img {
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 448px) {
+    header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        background-color: #fff;
+        z-index: 1000; 
+    }
+
+    #menu-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        color: black;
+        outline: none;
+        border: 0;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    #menu-mobile i {
+        margin-top: 1px;
+    }
+
+    nav ul {
+        display: none; 
+        flex-direction: column; 
+        width: 100%;
+        text-align: center;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav #menu.active {
+        display: flex; /* Mostra o menu quando a classe 'active' é adicionada */
+    }
+
+    main {
+        margin-top: 100px;
+    }
+}
